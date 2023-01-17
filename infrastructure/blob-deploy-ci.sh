@@ -54,10 +54,7 @@ then
     echo "ABORTING: az storage for 'stremoteb$env' is not a static website"
     exit 1
 fi
-
-yarn run build
-
-ls
+az_cli_container_with_build yarn build
 
 # Upload
 az_cli_container_with_build az storage blob upload-batch \
