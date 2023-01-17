@@ -32,7 +32,7 @@ const moduleFederationConfig = {
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === "production";
-  const isLocal = argv.mode === "development";
+  const isLocal = argv.mode === "local";
   return {
     entry: "./src/index.ts",
     mode: "development",
@@ -115,9 +115,9 @@ module.exports = (env, argv) => {
             archive: [
               {
                 source: `./exposedTypes/${moduleFederationConfig.name}`,
-                destination: `./${
-                  isProduction ? "out" : isLocal ? "dist" : "public"
-                }/${moduleFederationConfig.name}-dts.tgz`,
+                destination: `./${isProduction ? "dist" : "public"}/${
+                  moduleFederationConfig.name
+                }-dts.tgz`,
                 format: "tar",
                 options: {
                   gzip: true,
