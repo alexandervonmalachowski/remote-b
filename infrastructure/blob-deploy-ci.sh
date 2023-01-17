@@ -55,6 +55,8 @@ then
     exit 1
 fi
 
+ls
+
 yarn run build
 
 # Upload
