@@ -55,15 +55,19 @@ then
     exit 1
 fi
 
-yarn install
+az_cli_container_with_build npm -g yarn
 
-yarn build
+az_cli_container_with_build yarn install
+
+az_cli_container_with_build yarn build
+
+az_cli_container_with_build ls
 
 # Upload
 az_cli_container_with_build az storage blob upload-batch \
     --account-name "stremoteb$env"  \
     --auth-mode key \
-    --source dist \
+    --source ./out \
     --destination '$web' \
     --pattern '*' \
     --output table \
