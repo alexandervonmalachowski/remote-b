@@ -148,21 +148,4 @@ resource cdnProfileName_cdnEndpointName 'Microsoft.Cdn/profiles/endpoints@2020-0
   }
 }
 
-resource cdnProfileName_cdnEndpointName_qatestathome_inter_ikea_net 'Microsoft.Cdn/profiles/endpoints/customDomains@2020-09-01' = if ('qa' == environmentName) {
-  parent: cdnProfileName_cdnEndpointName
-  name: 'qaremoteb-inter-ikea-net'
-  properties: {
-    hostName: 'qaremoteb.inter.ikea.net'
-  }
- 
-}
-
-resource cdnProfileName_cdnEndpointName_testathome_inter_ikea_net 'Microsoft.Cdn/profiles/endpoints/customDomains@2020-09-01' = if ('prod' == environmentName) {
-  parent: cdnProfileName_cdnEndpointName
-  name: 'remoteb-inter-ikea-net'
-  properties: {
-    hostName: 'remoteb.inter.ikea.net'
-  }  
-}
-
 output endpoint string = storageAccountName_resource.properties.primaryEndpoints.web

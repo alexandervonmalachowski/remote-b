@@ -55,25 +55,13 @@ then
     exit 1
 fi
 
-# Build
-# echo ENVIRONMENT="$env"
-# echo NEXT_PUBLIC_CLIENT_ID="$client_id"
-# echo NEXT_PUBLIC_REDIRECT_URI="$endpoint"
-# echo NEXT_PUBLIC_REVISION="$revision"
-
-# rm -rf out
-# yarn install --immutable --immutable-cache
-# ENVIRONMENT="$env" \
-# NEXT_PUBLIC_CLIENT_ID="$client_id" \
-# NEXT_PUBLIC_REDIRECT_URI="$endpoint" \
-# NEXT_PUBLIC_REVISION="$revision" \
-#     yarn run static
+yarn run build
 
 # Upload
 az_cli_container_with_build az storage blob upload-batch \
     --account-name "stremoteb$env"  \
     --auth-mode key \
-    --source ./out \
+    --source ./dist \
     --destination '$web' \
     --pattern '*' \
     --output table \
