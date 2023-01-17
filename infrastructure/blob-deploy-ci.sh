@@ -55,15 +55,15 @@ then
     exit 1
 fi
 
-ls
-
 yarn run build
+
+ls
 
 # Upload
 az_cli_container_with_build az storage blob upload-batch \
     --account-name "stremoteb$env"  \
     --auth-mode key \
-    --source ./out \
+    --source ./dist \
     --destination '$web' \
     --pattern '*' \
     --output table \

@@ -52,10 +52,6 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS_PROD }}
 
-      - name: build project
-        run: |
-          yarn build
-
       - name: deployment script - dev
         if: ${{ github.ref == 'refs/heads/main' }}
         run: ./infrastructure/blob-deploy-ci.sh dev $AZURE_SUBSCRIPTION
