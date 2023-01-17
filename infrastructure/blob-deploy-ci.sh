@@ -55,13 +55,12 @@ then
     exit 1
 fi
 
-az_cli_container_with_build npm -g yarn
 
-az_cli_container_with_build yarn install
+yarn install
 
-az_cli_container_with_build yarn build
+yarn build
 
-az_cli_container_with_build ls
+ls
 
 # Upload
 az_cli_container_with_build az storage blob upload-batch \
