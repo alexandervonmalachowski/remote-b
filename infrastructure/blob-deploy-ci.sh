@@ -55,6 +55,10 @@ then
     exit 1
 fi
 
+az_cli_container_with_build yarn install
+
+az_cli_container_with_build yarn build
+
 # Upload
 az_cli_container_with_build az storage blob upload-batch \
     --account-name "stremoteb$env"  \

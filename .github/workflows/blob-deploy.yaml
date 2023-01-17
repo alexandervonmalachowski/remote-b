@@ -24,30 +24,10 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
 
-      - name: set yarn cache dir
-        run: echo CACHE_DIR=$(yarn config get cacheFolder) >> $GITHUB_ENV
-
-      - name: cache yarn cache dir
-        uses: actions/cache@v2
-        with:
-          path: ${{ env.CACHE_DIR }}
-          key: ${{ runner.os }}-yarn_cache-${{ hashFiles('**/yarn.lock') }}
-
-      - name: env
-        run: env
-      - name: pwd
-        run: pwd
-
-      - name: install
-        run: yarn install
-
       - name: login
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-      - name: build project
-        run: yarn build
 
       - name: deployment script - dev
         if: ${{ github.ref == 'refs/heads/main' }}
