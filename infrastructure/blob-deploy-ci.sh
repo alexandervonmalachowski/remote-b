@@ -63,7 +63,7 @@ yarn run build
 az_cli_container_with_build az storage blob upload-batch \
     --account-name "stremoteb$env"  \
     --auth-mode key \
-    --source ./dist \
+    --source dist \
     --destination '$web' \
     --pattern '*' \
     --output table \
