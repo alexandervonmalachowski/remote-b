@@ -15,16 +15,8 @@ const Page = ({ children }: PageType) => {
     <div className={styles["remote-b-home"]}>
       <h1>Home Remote B</h1>
 
-      {pathname === "/remote-b" && (
-        <Link to="/">
-          <button>To Orchestrator</button>
-        </Link>
-      )}
-      {pathname === "/" && (
-        <Link to="/remote-b">
-          <button>To Remote B</button>
-        </Link>
-      )}
+      {pathname === "/remote-b" && <Link to="/">To Host</Link>}
+      {pathname === "/" && <Link to="/remote-b">To Remote B</Link>}
       {children}
     </div>
   );
