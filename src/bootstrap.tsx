@@ -6,7 +6,7 @@ import App from "./app";
 
 const root = createRoot(document.getElementById("remote-b") as HTMLElement);
 root.render(
-  <BrowserRouter basename="/remote-b">
+  <BrowserRouter basename="/">
     <App />
   </BrowserRouter>
 );
