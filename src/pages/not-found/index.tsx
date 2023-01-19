@@ -1,14 +1,9 @@
-import React, { ReactNode } from "react";
+import React from "react";
 
-type PageType = {
-  children?: ReactNode;
-};
-
-const Page = ({ children }: PageType) => {
+const Page = () => {
   return (
     <div>
       <h1>Not found</h1>
-      {children}
     </div>
   );
 };
