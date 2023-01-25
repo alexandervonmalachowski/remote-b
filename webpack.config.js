@@ -15,7 +15,6 @@ const moduleFederationConfig = {
   },
   remotes: {},
   shared: {
-    ...deps,
     react: { singleton: true, eager: true, requiredVersion: deps.react },
     "react-dom": {
       singleton: true,
