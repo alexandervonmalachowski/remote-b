@@ -11,7 +11,7 @@ const moduleFederationConfig = {
   filename: "remoteEntry.js",
   exposes: {
     "./remote_b": "./src/pages/remote-b",
-    "./remote_b_routes": "./src/utils/routes",
+    "./not_found": "./src/pages/not-found",
   },
   remotes: {},
   shared: {
