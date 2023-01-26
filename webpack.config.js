@@ -12,6 +12,7 @@ const moduleFederationConfig = {
   exposes: {
     "./remote_b": "./src/pages/remote-b",
     "./not_found": "./src/pages/not-found",
+    "./about": "./src/pages/about",
   },
   remotes: {},
   shared: {
@@ -34,6 +35,7 @@ module.exports = (env, argv) => {
   return {
     entry: "./src/index.ts",
     mode: "development",
+    devtool: "source-map",
     output: {
       publicPath: "auto",
     },

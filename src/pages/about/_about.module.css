@@ -1,12 +1,11 @@
-._remote_b-module_remote-b-home_e8c8 {
+.remote-b-about {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 3rem;
 }
 
-._remote_b-module_remote-b-home_e8c8 > * {
+.remote-b-about > * {
   margin: 0.2rem 0;
   display: flex;
 }
-
